@@ -1,32 +1,45 @@
-/**
- * Doodle.java
- * Assignment: Project: 3 Café Wall part A
- * Purpose: This assignment focuses on for loops, parameters, and graphics,  
- *   as well as using the DrawingPanel, Graphics and Color classes.
- *
- * @version 02/25/21
- */
-
 import java.awt.*;
+import java.util.Random;
 
 public class Doodle {
 
-   //draws a spaceship
-   public static void main(String[] args) {
-      DrawingPanel panel = new DrawingPanel(400, 400);
-      Color DARKBLUE = new Color(0, 0, 100);
-      panel.setBackground(DARKBLUE);
-      Graphics g = panel.getGraphics();
-      g.setColor(Color.CYAN);
-      g.fillOval(100, 125, 200, 150);
-      g.setColor(Color.WHITE);
-      g.drawLine(225, 250, 300, 400);
-      g.drawLine(175, 250, 100, 400);
-      g.setColor(Color.GRAY);
-      g.fillOval(50, 200, 300, 100);
-      g.setColor(Color.YELLOW);
-      for (int i = 0; i <= 5; i++) {
-         g.fillOval(i * 50 + 65, 240, 20, 20);
-      }
-   }
+private static void drawSpaceShip(int n) {
+DrawingPanel panel = new DrawingPanel(2000, 2000);
+
+Color DARKBLUE = new Color(0, 0, 100);
+panel.setBackground(DARKBLUE);
+Graphics g = panel.getGraphics();
+
+Random rand = new Random();
+int i = 0;
+
+  while (i < n) {
+     int xcoord = rand.nextInt(2000);
+     int ycoord = rand.nextInt(2000);
+
+     g.setColor(Color.CYAN);
+     g.fillOval(xcoord, ycoord, 200, 150);
+     g.setColor(Color.WHITE);
+     g.drawLine(xcoord+20, ycoord, xcoord+95, ycoord+150);
+     g.drawLine(xcoord-20, ycoord, xcoord-95, ycoord+150);
+     g.setColor(Color.GRAY);
+     g.fillOval(xcoord, ycoord+80, 300, 100);
+     g.setColor(Color.YELLOW);
+
+     for (int j = 0; j <= 5; j++) {
+        g.fillOval(j*60 + xcoord-120, ycoord+80, 20, 20);
+     }
+     i++;
+    }
+  }
+
+
+
+//draws a spaceship
+public static void main(String[] args) {
+int n = 3;
+Doodle.drawSpaceShip(n);
+}
+
+    
 }
