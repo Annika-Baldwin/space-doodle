@@ -1,4 +1,4 @@
-package src.main.java.code;
+package code;
 /*
  * =====================================================================
  * DrawingPanel.java
