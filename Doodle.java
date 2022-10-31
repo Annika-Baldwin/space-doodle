@@ -1,3 +1,15 @@
+
+/**
+ * Doodle.java
+ * Assignment: Learn Git: Create two issues
+ * Purpose: This assignment focuses on for loops, parameters, and graphics,  
+ *   as well as using the DrawingPanel, Graphics and Color classes.
+ *
+ * @version 02/25/21
+ */
+//test
+
+
 import java.awt.*;
 import java.util.Random;
 
